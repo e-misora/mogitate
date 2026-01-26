@@ -1,6 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+
+Route::get('/products',[ProductController::class,'index']);
+Route::post('/products/register',[ProductController::class,'store']);
+Route::get('/products/register',[ProductController::class,'store']);
+Route::post('/products/detail',[ProductController::class,'detail']);
+
+Route::get('/products/detail',[ProductController::class,'detail']);
+
+
 
 /*
 |--------------------------------------------------------------------------
