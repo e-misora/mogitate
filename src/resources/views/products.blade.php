@@ -11,9 +11,9 @@
     </div>
     <div class="content__items">
         <div class="content__items--search">
-            <form class="item--search-form" action="" method="post">
+            <form class="item--search-form" action="/products/search" method="get">
             @csrf
-                <input class="item--search-name__input" type="text" placeholder="商品名で検索">
+                <input class="item--search-name__input" type="text" name="keyword" value="{{old('keyword')}}" placeholder="商品名で検索">
                 <input class="item--search-name__submit" type="submit" value="検索">
                 <div class="item--search-price">
                     <p class="item--search-price__tag">価格順で表示</p>
@@ -30,7 +30,7 @@
             <form class="item--product-card" action="/products/detail" method="post">
             @csrf
                 <button class="link__products-detail" type="submit">
-                <img class="product-card__img" src="{{asset('fruits-img/kiwi.png')}}" alt="">
+                <img class="product-card__img" src="{{asset('')}}" alt="">
                 <input type="hidden" name="image" value="{{$product['image']}}">
                 <div class="product-card__cap">
                     <p>{{$product['name']}}</p>
@@ -38,16 +38,12 @@
                     <p>¥{{$product['price']}}</p>
                     <input type="hidden" name="price" value="{{$product['price']}}">
                 </div>
-                <input type="hidden" name="description" value="{{$products['description']}}">
+                <input type="hidden" name="description" value="{{$product['description']}}">
                 </button>
             </form>
             @endforeach
         </div>
     </div>
-    <form action="/products/register" enctype='multipart/form-data' method="post"> 
-@csrf 
-    <input type="file" name="image">  
-    <input type="submit" value="写真を登録する"> 
 </form>
 
 @endsection

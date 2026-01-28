@@ -2,14 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ImageController;
 
 Route::get('/products',[ProductController::class,'index']);
+// Route::get('/products',[ProductController::class,'search']);
+Route::get('/products/register',[ProductController::class,'create']);
 Route::post('/products/register',[ProductController::class,'store']);
-Route::get('/products/register',[ProductController::class,'store']);
-Route::post('/products/detail',[ProductController::class,'detail']);
+Route::post('/products/detail',[ProductController::class,'edit']);
+Route::patch('/products/update',[ProductController::class,'update']);
 
-Route::get('/products/detail',[ProductController::class,'detail']);
-
+Route::post('/image',[ImageController::class,'store']);
+Route::get('/image',[ImageController::class,'create']);
 
 
 /*

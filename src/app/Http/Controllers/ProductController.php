@@ -13,15 +13,36 @@ class ProductController extends Controller
         return view('products',compact('products'));
     }
 
-    public function store(Request $request){
-        // $products=$request->all();
-        // Product::create($products);
+    public function create(){
         return view('products-register');
     }
 
-    public function detail(Request $request){
+    public function store(Request $request){
+        $path = $request->file('image')->store('public');
+
+        Product::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'image' => $path,
+            'description' => $request->description
+        ]);
+
+        return redirect('/products');
+    }
+
+    // public function search(Request $request){
+
+
+    //     return view('products');
+    // }
+
+    public function edit(Request $request){
         $products=$request->all();
         return view('products-detail',compact('products'));
+    }
+
+    public function update(Request $request){
+        
     }
 
 }

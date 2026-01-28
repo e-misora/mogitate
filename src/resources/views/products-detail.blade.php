@@ -16,7 +16,7 @@
         <div class="products-detail__form-inner">
             <div class="products-detail__form-items">
                 <img class="products-detail__form-img" src="" alt="">
-                <input type="file">
+                <input type="file" >
             </div>
             <div class="products-detail__form-items">
                 <label for="name">商品名</label>
@@ -32,7 +32,7 @@
         </div>
         <div>
             <label for="description">商品説明</label>
-            <textarea class="products-detail__form-textarea" name="description" id="description" value="{{$products['description']}}"></textarea>
+            <textarea class="products-detail__form-textarea" rows="6" name="description" id="description" value="{{$products['description']}}"></textarea>
         </div>
         <div class="products-detail__form-button">
             <a class="products-detail__form--back" href="/products">戻る</a>
