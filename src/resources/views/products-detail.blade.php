@@ -13,11 +13,11 @@
         <span>{{$products['name']}}</span>
     </div>
     <form class="products-update__form" method="post" action="/products">
-        @method('patch')
+        @method('PATCH')
         @csrf
         <div class="products-detail__form-inner">
             <div class="products-detail__form-items">
-                <img class="products-detail__form-img" src="" alt="">
+                <img class="products-detail__form-img" src="{{asset('storage/' . $products['image'])}}" alt="">
                 <input type="file">
             </div>
             <div class="products-detail__form-items">
@@ -34,13 +34,21 @@
         </div>
         <div>
             <label for="description">商品説明</label>
-            <textarea class="products-detail__form-textarea" rows="6" name="description" id="description" value="{{$products['description']}}"></textarea>
+            <textarea class="products-detail__form-textarea" rows="6" name="description" id="description">{{$products['description']}}</textarea>
         </div>
+        <input type="hidden" name="id" value="{{$products['id']}}">
         <div class="products-detail__form-button">
             <a class="products-detail__form--back" href="/products">戻る</a>
             <button class="products-detail__form--submit">変更を保存</button>
+            </form>
+            <form class="form__products--delete" action="/product/delete" method="post">
+            @method('DELETE')
+            @csrf
+                <button class="form__delete-submit">
+                    <img class="form__delete-button" src="{{asset('icons8-削除-48.png')}}" alt="">
+                    <input type="hidden" name="id" value="{{$products['id']}}">
+                </button>
+            </form>
         </div>
-    </form>
 </div>
-
 @endsection

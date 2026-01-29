@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content-top">
-        <h2 class="content__outline">""の商品一覧</h2>
+        <h2 class="content__outline">"{{$products['name']}}"の商品一覧</h2>
     </div>
     <div class="content__items">
         <div class="content__items--search">
@@ -31,8 +31,8 @@
                 <img class="product-card__img" src="" alt="">
                 <input type="hidden" name="image" >
                 <div class="product-card__cap">
-                    <p></p>
-                    <p>¥</p>
+                    <p>{{$products['name']}}</p>
+                    <p>¥{{$products['price']}}</p>
                 </div>
                 </button>
             </form>

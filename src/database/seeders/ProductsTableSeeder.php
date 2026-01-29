@@ -52,7 +52,7 @@ class ProductsTableSeeder extends Seeder
         $param=[
             'name'=>'シャインマスカット',
             'price'=>'1400',
-            'image'=>'aLQLt76CbjmGC2VCT6tQ9Mn8dylA2mId2FARmXrZ.png.png',
+            'image'=>'aLQLt76CbjmGC2VCT6tQ9Mn8dylA2mId2FARmXrZ.png',
             'description'=>'爽やかな香りと上品な甘みが特長的なシャインマスカットは大人から子どもまで大人気のフルーツです。疲れた脳や体のエネルギー補給にも最適の商品です。もぎたてフルーツのスムージーをお召し上がりください！',
         ];
         DB::table('products')->insert($param);

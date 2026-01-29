@@ -14,17 +14,16 @@ class ProductController extends Controller
     }
 
     public function search(Request $request){
-        return view('products-search');
+        return view('products-search',compact('products'));
     }
 
-
-
     public function create(){
-        return view('products-register',compact('products'));
+        return view('products-register');
     }
 
     public function store(Request $request){
         $path = $request->file('image')->store('public');
+        $products = $request->only(['name', 'price','image','description']);
 
         Product::create([
             'name' => $request->name,
@@ -42,8 +41,14 @@ class ProductController extends Controller
     }
 
     public function update(Request $request){
-        $product = $request->only(['name']);
+        $product = $request->all();
+        dd($product);
         Product::find($request->id)->update($product);
+        return redirect('/products');
+    }
+
+    public function destroy(Request $request){
+        Product::find($request->id)->delete();
         return redirect('/products');
     }
 }

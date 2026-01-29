@@ -3,6 +3,9 @@
 ## 環境構築
 
 - リポジトリをクローン  
+
+  ターミナルを起動
+
   ```bash
   git clone git@github.com:e-misora/mogitate.git  
   ```
@@ -58,6 +61,15 @@
   php artisan db:seed
   ```
 
+- 画像を表示するためのシンボリックリンクを作成  
+  ```bash
+  docker-compose exec php bash  
+  ```
+  ```bash
+  php artisan storage:link
+  ```
+
+
 ## 使用技術（実行環境）
 
 - php:
@@ -73,6 +85,6 @@
 
 - 商品一覧画面  
   http://localhost/products
-- DB  
+- DB(データベーステーブル)  
   http://localhost:8080/
 
