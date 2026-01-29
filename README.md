@@ -67,10 +67,12 @@
 
 ## ER図
 
+![ER図](mogitate.png)
+
 ## URL
 
-- お問い合わせフォーム  
-  http://localhost
-- ユーザー登録画面  
-  http://localhost/register
+- 商品一覧画面  
+  http://localhost/products
+- DB  
+  http://localhost:8080/
 

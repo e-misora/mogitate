@@ -15,5 +15,6 @@
         </div>
     <button type="submit"></button>
 </form>
+<img src="{{asset('storage/'.'1Px8lyTzicSKNESZcW67d6qXCBzFE7Mi0SU0uxEK.jpg')}}" alt="">
 </body>
 </html>

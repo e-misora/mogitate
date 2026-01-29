@@ -12,11 +12,13 @@
         <span>></span>
         <span>{{$products['name']}}</span>
     </div>
-    <form class="products-detail__form">
+    <form class="products-update__form" method="post" action="/products">
+        @method('patch')
+        @csrf
         <div class="products-detail__form-inner">
             <div class="products-detail__form-items">
                 <img class="products-detail__form-img" src="" alt="">
-                <input type="file" >
+                <input type="file">
             </div>
             <div class="products-detail__form-items">
                 <label for="name">商品名</label>
