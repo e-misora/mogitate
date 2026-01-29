@@ -17,7 +17,7 @@
         @csrf
         <div class="products-detail__form-inner">
             <div class="products-detail__form-items">
-                <img class="products-detail__form-img" src="{{asset('storage/' . $products['image'])}}" alt="">
+                <img class="products-detail__form-img" src="{{asset('storage/'.'fruits-img'.$products['image'])}}" alt="">
                 <input type="file">
             </div>
             <div class="products-detail__form-items">

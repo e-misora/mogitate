@@ -30,7 +30,7 @@
             <form class="item--product-card" action="/products/detail" method="post">
             @csrf
                 <button class="link__products-detail" type="submit">
-                <img class="product-card__img" src="{{asset('storage/'.$product->image)}}" alt="">
+                <img class="product-card__img" src="{{asset('storage/'.'fruits-img'.$product->image)}}" alt="">
                 <input type="hidden" name="image" value="{{$product['image']}}">
                 <div class="product-card__cap">
                     <p>{{$product['name']}}</p>
